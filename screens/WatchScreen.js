@@ -83,7 +83,7 @@ const WatchScreen = () => {
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
-      style={styles.categoriesContainer}>
+      contentContainerStyle={styles.categoriesContainer}>
       {CATEGORIES.map(category => (
         <TouchableOpacity
           key={category}
@@ -163,6 +163,33 @@ const WatchScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  categoriesContainer: {
+    display: 'flex',
+    flexDirection: 'row', // Ensure horizontal layout
+    backgroundColor: '#ffffff',
+    paddingVertical: 12,
+    paddingHorizontal: 8, // Add horizontal padding
+    borderBottomWidth: 1,
+    borderBottomColor: '#e4e6eb',
+  },
+  categoryButton: {
+    padding: 10,
+    backgroundColor: '#f1f1f1',
+    borderRadius: 8,
+    marginHorizontal: 8, // Add spacing between buttons
+    alignItems: 'center',
+  },
+  categoryButtonActive: {
+    backgroundColor: '#e0e7ff',
+  },
+  categoryButtonText: {
+    fontSize: 16,
+    color: '#333',
+  },
+  categoryButtonTextActive: {
+    color: '#1a73e8',
+  },
+
   container: {
     flex: 1,
     backgroundColor: '#f0f2f5',
@@ -194,29 +221,7 @@ const styles = StyleSheet.create({
     color: '#1c1e21',
     fontWeight: '500',
   },
-  categoriesContainer: {
-    backgroundColor: '#ffffff',
-    paddingVertical: 12,
-    borderBottomWidth: 1,
-    borderBottomColor: '#e4e6eb',
-  },
-  categoryButton: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    marginHorizontal: 4,
-    borderRadius: 20,
-    backgroundColor: '#e4e6eb',
-  },
-  categoryButtonActive: {
-    backgroundColor: '#1877f2',
-  },
-  categoryButtonText: {
-    color: '#65676b',
-    fontWeight: '500',
-  },
-  categoryButtonTextActive: {
-    color: '#ffffff',
-  },
+
   videoList: {
     padding: 8,
   },
